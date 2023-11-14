@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Culinary Wonders</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <div class="container">
@@ -79,18 +79,18 @@
             Meet the team and get to know the people behind our recipes:</p>
                 <div class="staff">
                     <div class="star">
-                    <img src="img/istockphoto-1223239144-612x612.jpg" alt="Team Member 1"> 
-                    <div class="name">
-                    <h4>Meowster Chef - Founder and Head Chef</h4>
-                    <button>Meow!</button>
-                </div>
-                </div>
-                    <div class="star">
-                    <img src="img/l2-300x235_1_300x283.png" alt="Team Member 2"> 
-                    <div class="name">
-                    <h4>Baker's Purr-fection - Recipe Developer</h4>
-                    <button>Purr!</button>
+                        <img id="chefImage" src="img/istockphoto-1223239144-612x612.jpg" alt="Team Member 1">
+                            <div class="name">
+                                <h4>Meowster Chef - Founder and Head Chef</h4>
+                                <button class="animate" onclick="addImageClass('chefImage','animate__shakeY')">Meow!</button>
+                            </div>
                     </div>
+                    <div class="star">
+                        <img id="bakerImage" src="img/l2-300x235_1_300x283.png" alt="Team Member 2">
+                            <div class="name">
+                                <h4>Baker's Purr-fection - Recipe Developer</h4>
+                                <button class="animate" onclick="addImageClass('bakerImage','animate__rubberBand')">Purr!</button>
+                            </div>
                     </div>
                 </div>
                 
@@ -132,5 +132,16 @@
         </div>
 
     </div>
+<script>
+    function addImageClass(imageId,animation) {
+    const imageElement = document.getElementById(imageId);
+    if (imageElement) {
+      imageElement.classList.add('animate__animated', animation);
+      setTimeout(() => {
+        imageElement.classList.remove('animate__animated', animation);
+      }, 1000);
+    }
+  }
+</script>
 </body>
 </html>
